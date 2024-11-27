@@ -104,4 +104,110 @@ y_test[:10]
 # %%
 
 
-
+Experiment - 6 
+ 
+AIM: The aim of this implementation is to apply the Support Vector Machine (SVM) 
+classifier on the Digits dataset, which consists of images of handwritten digits (0-9). 
+The goal is to classify each image correctly into its corresponding digit. By utilizing 
+the SVM classifier, which is known for its robustness in high-dimensional spaces, we 
+aim to assess its performance in classifying images of handwritten digits. 
+ 
+SOFTWARE REQUIRED: Google Colab 
+ 
+THEORY: 
+Support Vector Machine (SVM): 
+• SVM is a supervised machine learning algorithm that aims to find the optimal 
+decision boundary (hyperplane) that best separates different classes in the feature 
+space. The core idea is to maximize the margin between the classes while 
+minimizing the classification error. 
+• Support Vectors: In SVM, the points closest to the decision boundary are known 
+as support vectors. These support vectors are critical because they directly affect 
+the position of the hyperplane. The SVM algorithm is based on these support 
+vectors and does not consider the rest of the data points in the training process. This 
+makes SVM efficient in terms of memory and computation, as it only uses a subset 
+of the data. 
+• Kernel Trick: For linearly inseparable data, SVM uses a technique called the 
+"kernel trick," which maps the data into a higher-dimensional space. By applying 
+kernels like the Radial Basis Function (RBF), polynomial, or sigmoid kernels, 
+SVM can learn non-linear decision boundaries and improve classification 
+performance. The kernel function computes the dot product of data points in this 
+higher-dimensional space without explicitly transforming the data, making it 
+computationally efficient. 
+• Regularization (C Parameter): The C parameter controls the trade-off between 
+maximizing the margin and minimizing the classification error. A smaller value of 
+C allows for a wider margin but may result in more misclassifications, while a 
+larger value of C forces fewer misclassifications but can result in a smaller margin 
+and higher risk of overfitting. 
+• Gamma Parameter: In SVM with the RBF kernel, the gamma parameter defines 
+the influence of each training point. A small gamma means the model is more 
+generalized (low bias, high variance), while a large gamma leads to overfitting as 
+the decision boundary becomes too specific to the training data (high bias, low 
+variance). Choosing the optimal gamma is critical for achieving good model 
+performance. 
+• Multiclass Classification with SVM: Although SVM is inherently a binary 
+classifier, it can be adapted to multiclass problems using strategies like one-vs-one 
+27 | Page 
+ 
+(OvO) or one-vs-all (OvA). In these strategies, multiple binary classifiers are 
+trained, and the final prediction is determined by combining the results of the 
+individual classifiers. 
+• Outlier Sensitivity: SVM is sensitive to outliers, especially when the regularization 
+parameter (C) is not properly tuned. Outliers can affect the position of the 
+hyperplane and degrade the performance of the classifier. 
+ 
+By considering these aspects of SVM, it becomes clear that it is a powerful and versatile 
+tool for classification tasks, capable of handling both linear and non-linear problems with 
+high- dimensional datasets, such as the Digits dataset. 
+ 
+CODE: 
+ 
+Step 1: Loading required libraries and pre-processing the dataset 
+ 
+ 
+ 
+Step 2: Training the model and predicting classing of test data 
+ 
+28 | Page 
+ 
+ 
+ 
+Step 3: Analyzing the performance of the model 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RESULTS:  
+• Classification Performance: When applied to the Digits dataset, SVM typically achieves 
+high accuracy, often ranging between 90% and 97%, depending on the kernel and 
+hyperparameter settings. 
+• Evaluation Metrics: In addition to accuracy, performance can be measured using other 
+metrics such as precision, recall, F1-score, and confusion matrix, providing a more 
+comprehensive evaluation of the classifier's ability to differentiate between the 10 classes 
+(digits 0-9). 
+• Kernel Impact: The choice of kernel significantly impacts performance. The RBF kernel 
+usually provides the best results for this type of data, as it effectively handles non-linear 
+relationships between the features. 
+ 
+ 
+29 | Page 
+ 
+ 
+CONCLUSION:  
+• The SVM classifier, especially when applied with a non-linear kernel like 
+the Radial Basis Function (RBF), is well-suited for handling complex 
+classification problems such as handwritten digit recognition. 
+• The ability of SVM to create a decision boundary in a higher-dimensional 
+space using kernel functions allows it to effectively classify the digits despite 
+the data's non-linear nature. 
+• SVM provides strong generalization capabilities and is less prone to 
+overfitting, especially when proper tuning of hyperparameters like C and 
+gamma is performed. 
