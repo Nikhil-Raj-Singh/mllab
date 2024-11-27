@@ -1,0 +1,108 @@
+Experiment - 11 
+ 
+AIM:  
+The aim of this experiment is to compare and evaluate the performance of three different 
+clustering algorithms—K-Means, Hierarchical Clustering, and DBSCAN—on a synthetic 
+dataset. These methods are applied to group data points into clusters based on their features. 
+The effectiveness of the clustering algorithms is assessed using the Silhouette Score, which 
+measures how similar each point is to its own cluster compared to other clusters. The goal is to 
+visualize the clustering results and determine which method performs best for this synthetic 
+dataset. 
+ 
+SOFTWARE REQUIRED: Google Colab 
+ 
+THEORY: 
+1. K-Means Clustering: 
+o Concept: K-Means is a centroid-based clustering algorithm. It divides 
+the data into K clusters by minimizing the sum of squared distances 
+between data points and their corresponding cluster centroids. The 
+algorithm iteratively assigns points to the nearest centroid and 
+recalculates centroids until convergence. 
+o Advantages: Fast, simple, and works well when clusters are 
+spherical and roughly  equal in size. 
+o Disadvantages: Sensitive to the initial placement of centroids and the value of 
+K. 
+2. Hierarchical Clustering: 
+o Concept: Hierarchical clustering builds a tree-like structure of 
+clusters. Agglomerative hierarchical clustering starts by treating each 
+data point as its own cluster and then merges clusters iteratively based 
+on their similarity. It can be visualized as a dendrogram. 
+o Advantages: Does not require specifying the number of clusters in 
+advance. The dendrogram provides a visual understanding of how 
+clusters relate. 
+o Disadvantages: Computationally expensive for large datasets. 
+3. DBSCAN (Density-Based Spatial Clustering of Applications with Noise): 
+o Concept: DBSCAN clusters data points based on their density in the 
+feature space. It groups closely packed points into clusters and labels 
+points in low-density regions as outliers (noise). DBSCAN requires two 
+parameters: eps (the radius of neighborhood around a point) and 
+min_samples (minimum number of points required to form a cluster). 
+o Advantages: Can find arbitrarily shaped clusters and does not require 
+specifying the number of clusters. It can handle outliers well. 
+o Disadvantages: Sensitive to the selection of parameters, especially eps and 
+min_samples 
+ 
+ 
+47 | Page 
+ 
+ 
+CODE: 
+ 
+Step 1: Generating the dataset and pre-processing the dataset 
+ 
+ 
+Step 2: Plotting original dataset 
+ 
+ 
+ 
+48 | Page 
+ 
+Step 3: Applying different clustering methods 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+49 | Page 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RESULTS: 
+• K-Means Silhouette Score: 0.8447 
+            The K-Means algorithm performs well on this synthetic dataset, achieving a high silhouette            
+            score, indicating that the points are well-separated into distinct clusters. 
+ 
+• Hierarchical Clustering Silhouette Score: 0.8447 
+            Hierarchical clustering performs similarly to K-Means on this dataset, with the same silhouette    
+50 | Page 
+ 
+             score. This suggests that the structure of the dataset is well-suited for hierarchical methods, and              
+             the clusters are similarly well-defined. 
+ 
+• DBSCAN Silhouette Score: 0.8447 
+            DBSCAN also achieves the same silhouette score, which indicates that the density- based    
+            method also identifies well-separated clusters. However, it is worth noting that DBSCAN might    
+            label some points as outliers (which might not be reflected in the silhouette score directly). 
+ 
+ 
+CONCLUSION:  
+• The K-Means, Hierarchical Clustering, and DBSCAN methods all perform well on 
+this synthetic dataset with a high silhouette score, indicating good clustering 
+performance. The results are consistent across all three methods, with similar 
+silhouette scores. 
+• DBSCAN has the advantage of identifying noise, which can be useful in datasets 
+with outliers, while K-Means and Hierarchical Clustering are more deterministic 
+and require a predefined number of clusters. 
+• K-Means and Hierarchical Clustering are computationally more efficient and scale 
+better with large datasets compared to DBSCAN, which can be sensitive to the 
+selection of parameters. 
+ 
+For datasets with clear, well-separated clusters, any of the three methods can perform well. 
+However, for datasets with varying densities or noise, DBSCAN may provide better results.
