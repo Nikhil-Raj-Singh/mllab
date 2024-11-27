@@ -132,5 +132,93 @@ plt.show()
 
 # %%
 
-
+Experiment - 5 
+ 
+AIM: The aim of this study is to implement Logistic Regression for binary classification and 
+Softmax Regression for multiclass classification on different datasets, evaluating the 
+performance of each model in predicting the target variables, such as survival in the Titanic 
+dataset (binary) and species in the Iris dataset (multiclass). 
+ 
+SOFTWARE REQUIRED: Google Colab 
+ 
+THEORY: 
+ 
+1. Logistic Regression (Binary Classification): 
+Logistic regression is a statistical model used to predict the probability of a binary 
+outcome (0 or 1). The model outputs a value between 0 and 1 using the sigmoid 
+function. The logistic regression equation is: 
+�
+�(𝑌=1)= 1
+ 1+ⅇ−(𝛽0+𝛽1𝑋)
+ 
+Where: 
+• 𝑃(𝑌=1) is the probability of the target variable being 1. 
+• 𝛽0 is the intercept. 
+• 𝛽1 is the coefficient. 
+• 𝑋 is the input feature(s). 
+Logistic regression is widely used for binary classification tasks, such as predicting 
+whether a passenger survived (Titanic dataset). 
+ 
+2. Softmax Regression (Multiclass Classification): 
+Softmax regression is an extension of logistic regression to handle multiclass 
+classification problems. It uses the softmax function to predict the probabilities for 
+each class in a classification task with more than two classes. For a set of 
+classes C1,C2,...,CkC1,C2,...,Ck, the softmax function outputs the probability that a 
+given input XX belongs to each class. 
+The equation for the softmax function for class j is: 
+�
+�(𝐶𝑗|𝑥)= ⅇ𝛽𝑗
+ 𝑇𝑋
+ ∑ ⅇ𝛽𝑘
+ 𝑇𝑋 𝐾
+ 𝑘=1
+ 
+Where: 
+• 𝑃(𝐶𝑗|𝑥)is the probability that input XX belongs to class 𝐶𝑗 
+• 𝛽𝑗
+ 𝑇 are the coefficients associated with class 𝐶𝑗 
+• K is the total number of classes. 
+Softmax regression is useful for multiclass classification problems, such as classifying 
+flower species in the Iris dataset. 
+ 
+ 
+23 | Page 
+ 
+3. Evaluation Metrics: 
+• Accuracy: The proportion of correct predictions out of all predictions. 
+• Precision: The ratio of true positives to the sum of true positives and false positives. 
+• Recall: The ratio of true positives to the sum of true positives and false negatives. 
+• F1-Score: The harmonic mean of precision and recall. 
+ 
+CODE: 
+A. IMPLEMENTATION OF LOGISTIC REGRESSION ON TITANIC DATASET 
+ 
+Step 1: Importing required libraries and pre-processing the data 
+ 
+RESULTS:  
+• Logistic Regression (Titanic Dataset): 
+Logistic regression provides an accuracy ranging from 78% to 82% for the Titanic dataset, 
+depending on data preprocessing and feature engineering steps. The model’s performance 
+can also be assessed using additional metrics like precision, recall, and F1-score, offering a 
+comprehensive understanding of its effectiveness in predicting passenger survival. 
+ 
+ 
+ 
+ 
+• Softmax Regression (Iris Dataset): 
+On the Iris dataset, Softmax regression typically achieves high accuracy, often ranging 
+between 90% and 98%, depending on the preprocessing. Softmax regression handles the 
+three-class classification problem efficiently, offering robust performance across different 
+feature sets. 
+ 
+ 
+ 
+CONCLUSION:  
+• Logistic Regression was effective for binary classification in predicting survival in the 
+Titanic dataset, with a good balance of precision, recall, and F1-score. 
+• Softmax Regression performed well for multiclass classification on the Iris dataset, with 
+high accuracy and strong performance across all species. 
+• Both models are suitable for their respective classification tasks, with Logistic Regression 
+being ideal for binary classification and Softmax Regression excelling in multiclass 
+classification scenarios.
 
