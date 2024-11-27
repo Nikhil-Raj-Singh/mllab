@@ -1,0 +1,214 @@
+AIM: The aim of this experiment is to implement Simple Linear Regression and 
+Multiple Linear Regression using different techniques such as: 
+• Sklearn Function (pre-built library function) 
+• Batch Gradient Descent (Batch GD) 
+• Mini-Batch Gradient Descent (Mini-Batch GD) 
+• Stochastic Gradient Descent (Stochastic GD) 
+Additionally, the model performances will be evaluated using key regression metrics 
+like: 
+• Mean Squared Error (MSE) 
+• Root Mean Squared Error (RMSE) 
+• R² Score 
+The goal is to compare the effectiveness and accuracy of these methods in predicting 
+continuous outcomes and evaluate their respective performances using appropriate 
+metrics. 
+ 
+SOFTWARE REQUIRED: Google Colab 
+ 
+THEORY: 
+ 
+1.Simple Linear Regression: 
+ 
+Simple Linear Regression is a statistical method used to model the relationship between a 
+dependent variable and a single independent variable. The relationship is represented by a 
+straight line, and the goal is to find the best-fitting line that minimizes the residual sum of 
+squares. The equation is: 
+�
+�=𝛽0+𝛽1𝑋 
+Where: 
+• Y is the dependent variable 
+• X is the independent variable 
+• β0 is the intercept 
+• β1 is the slope of the line 
+ 
+2. Multiple Linear Regression 
+ 
+Multiple Linear Regression is an extension of simple linear regression to model the 
+relationship between a dependent variable and multiple independent variables. The general 
+form of the equation is: 
+�
+�=𝛽0𝑋0+𝛽1𝑋1+⋯⋅𝛽𝑛𝑋𝑛 
+ 
+ 
+17 | Page 
+ 
+Where: 
+• Y is the dependent variable 
+• 𝑋0, 𝑋1 ,…, 𝑋𝑛 are the independent variables 
+• 𝛽0 is the intercept 
+• 𝛽1, …, 𝛽𝑛 are the coefficients of the independent variables 
+ 
+3. Gradient Descent Techniques:  
+• Batch Gradient Descent (Batch GD): 
+Batch Gradient Descent is an optimization algorithm used to minimize the cost function 
+by iteratively adjusting the model parameters. In Batch GD, the entire training dataset is 
+used to compute the gradient of the cost function and update the model parameters at each 
+iteration. This method is computationally expensive for large datasets. 
+ 
+• Mini-Batch Gradient Descent (Mini-Batch GD): 
+Mini-Batch Gradient Descent is a compromise between Batch GD and Stochastic GD. It 
+uses a small random subset of the training data (mini-batch) at each iteration to update the 
+parameters. This method is faster than Batch GD and more stable than Stochastic GD. 
+ 
+• Stochastic Gradient Descent (Stochastic GD): 
+Stochastic Gradient Descent updates the model parameters after evaluating the gradient 
+for each training example. This results in faster updates but can be noisy and less stable. It 
+is computationally less expensive as it uses only one training sample per iteration. 
+ 
+4. Evaluation Metrics 
+• Mean Squared Error (MSE): 
+MSE is the average of the squared differences between the predicted and actual values. It 
+measures the accuracy of a regression model. The formula is: 
+�
+�𝑆𝐸=1
+ 𝑛∑(𝑦𝑖−𝑦̂𝑖)2
+ 𝑛
+ 𝑖=1
+ 
+• Root Mean Squared Error (RMSE): 
+RMSE is the square root of the MSE, providing a more interpretable measure of the error 
+in the same units as the dependent variable. It is less sensitive to large errors than MSE. 
+�
+�𝑀𝑆𝐸=√𝑀𝑆𝐸 
+• R² Score: 
+The R² Score (Coefficient of Determination) measures the proportion of variance in the 
+dependent variable that is predictable from the independent variables. The value ranges 
+from 0 to 1, where 1 indicates perfect prediction and 0 indicates no predictive power. 
+�
+�2=1−
+ ∑ (𝑦𝑖−𝑦̂𝑖)2 𝑛
+ 𝑖=1
+ ∑ (𝑦𝑖−𝑦̅)2 𝑛
+ 𝑖=1
+ 
+ 
+Where 𝑦𝑖 is the actual value, 𝑦̂𝑖  is the predicted value, and 𝑦̅ is the mean of actual values. 
+18 | Page 
+ 
+ 
+ 
+CODES:  
+ 
+Step 1: Loading student_score dataset and importing required libraries 
+ 
+ 
+Step 2: Splitting the data set into test and train and scaling the train dataset 
+ 
+ 
+Step 3: Implementing Linear Regression function of sklearn and plotting the results 
+ 
+ 
+ 
+19 | Page 
+ 
+ 
+Step 4: Implementing simple linear regression using three different Gradient descent 
+methods 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step 5: Implementing Multiple Linear Regression 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+20 | Page 
+ 
+Step 6: Implementing MLR using sklearn classes 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step 7: Implementation of three different gradient descent methods 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+21 | Page 
+ 
+RESULTS:  
+Sklearn Function: 
+Provided a quick and accurate implementation of both simple and multiple linear regression. 
+Evaluated metrics: Low MSE, RMSE, and high R² score. 
+Batch Gradient Descent (Batch GD): 
+Slower convergence due to processing the entire dataset at once. Achieved good accuracy but 
+took longer to reach optimal parameters. 
+Mini-Batch Gradient Descent (Mini-Batch GD): 
+Balanced performance and speed. Faster convergence than Batch GD, with competitive MSE, 
+RMSE, and R² scores. 
+Stochastic Gradient Descent (Stochastic GD): 
+Fastest convergence but showed more instability and noise during training. Provided acceptable 
+results, though slightly less accurate than the other methods. 
+ 
+ 
+ 
+ 
+ 
+ 
+CONCLUSION:  
+In this task, different methods for implementing Linear Regression (both simple and multiple) were 
+explored and compared. The use of Gradient Descent techniques like Batch GD, Mini-Batch GD, 
+and Stochastic GD allowed us to evaluate their performance against the pre-built Sklearn 
+LinearRegression function. 
+Overall, Mini-Batch GD emerged as the most efficient technique for regression tasks, combining 
+speed and accuracy, while Sklearn remained a strong option for ease of implementation and 
+reliability. 
+
+
