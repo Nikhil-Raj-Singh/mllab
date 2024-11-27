@@ -1,0 +1,107 @@
+# %%
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+
+# %%
+df=pd.read_csv("insurance.csv")
+
+# %%
+df.head()
+
+# %%
+## data cleaning
+df.info
+
+# %%
+df.describe()
+
+# %%
+df.head()
+
+# %%
+## feature enginering
+Male=pd.get_dummies(df['sex'],drop_first=True,dtype=int)
+Smoker=pd.get_dummies(df['smoker'],drop_first=True,dtype=int)
+## contactnating male intp df
+
+# %%
+df=pd.concat([df,Male],axis=1)
+df=pd.concat([df,Smoker],axis=1)
+df.head()
+
+# %% [markdown]
+# ## Expolatory analysis
+
+# %%
+df['sex'].value_counts()
+sns.countplot(x="sex",data=df,palette="GnBu")
+
+# %%
+sns.countplot(x="sex",data=df,palette="GnBu")
+
+# %%
+#relationship between smoker and gender wrt to charges
+plt.figure(figsize=(12,6))
+sns.boxplot(x='sex',y='charges', hue="smoker",data=df,palette="RdBu")
+sns.despine(left=True)
+
+# %%
+sns.scatterplot(x='age',hue='smoker',y='charges',data=df)
+
+# %%
+fig,ax=plt.subplots(nrows=1,ncols=2,figsize=(14,6))
+sns.scatterplot(x='bmi',hue='smoker',y='charges',data=df,ax=ax[0])
+sns.scatterplot(x='bmi',y='charges',hue='sex',data=df,ax=ax[1])
+
+# %%
+df.drop(['sex','smoker','region'],axis=1,inplace=True)
+
+# %%
+df.head()
+
+# %% [markdown]
+# ## Training the data
+
+# %%
+## splitting the data
+x=df.drop('charges',axis=1)
+y=df['charges']
+
+# %%
+x.head()
+
+# %%
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.4)
+
+# %%
+## scaling the data
+from sklearn.preprocessing import StandardScaler
+scaler=StandardScaler()
+x_scaled_train=scaler.fit_transform(x_train)
+x_scaled_test=scaler.transform(x_test)
+
+# %% [markdown]
+# ## Support Vector Regression Model
+
+# %%
+from  sklearn.svm import SVR
+regressor=SVR()
+regressor.fit(x_scaled_train,y_train)
+
+# %%
+predict=regressor.predict(x_scaled_test)
+
+# %%
+predict[:10]
+
+# %%
+y_test[:10]
+
+# %%
+
+
+
