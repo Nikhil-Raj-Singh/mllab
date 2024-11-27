@@ -65,3 +65,103 @@ from sklearn.metrics import mean_squared_error
 mean_squared_error(y_test,pred)
 
 
+Experiment - 7 
+ 
+AIM: Implement Decision Tree Regression and Classification algorithms. The goal is 
+to analyze the performance of Decision Trees for both types of tasks, and evaluate their 
+effectiveness on different datasets. 
+ 
+SOFTWARE REQUIRED: Google Colab 
+ 
+THEORY: 
+A Decision Tree is a non-parametric supervised machine learning algorithm used for both 
+classification and regression tasks. It works by recursively partitioning the feature space 
+into subsets based on feature values to make predictions. 
+• Decision Tree for Classification: 
+In classification tasks, the decision tree splits the data into branches based on feature 
+values, aiming to assign each instance to one of the predefined classes. The tree is built 
+by choosing the feature that provides the best split at each node, according to a certain 
+criterion like Gini Impurity, Information Gain, or Chi-square. 
+ 
+• Decision Tree for Regression: 
+For regression tasks, the decision tree predicts a continuous value rather than a class 
+label. Instead of maximizing information gain or minimizing impurity, the tree 
+minimizes the variance of the target variable within the leaves of the tree. 
+ 
+How Decision Trees Work: 
+• Splitting: The decision tree starts at the root and chooses the feature that best splits 
+the data (based on certain criteria such as Gini Impurity, Entropy for classification, 
+or Variance Reduction for regression). 
+• Branching: It recursively splits the data into smaller subsets, creating branches. The 
+tree continues to branch until a stopping condition is met (e.g., maximum depth, 
+minimum number of samples per leaf, or no further improvement). 
+• Leaf Nodes: Once the data cannot be split further, the leaf node is assigned a label 
+(in classification) or a continuous value (in regression) 
+ 
+Advantages of Decision Trees: 
+• Easy to understand and interpret (visualization). 
+• Non-linear in nature, capable of handling complex relationships between features. 
+• No need for feature scaling (works well with both categorical and numerical data). 
+• Can handle both classification and regression tasks. 
+ 
+Disadvantages of Decision Trees: 
+• Prone to overfitting, especially with deep trees. 
+• Can be unstable if small changes in the data lead to large changes in the tree 
+31 | Page 
+ 
+structure. 
+• Bias towards features with more levels in categorical data. 
+ 
+Hyperparameters to tune: 
+• max_depth: Maximum depth of the tree. 
+• min_samples_split: Minimum number of samples required to split an internal node. 
+• min_samples_leaf: Minimum number of samples required to be at a leaf node. 
+• criterion: Splitting criterion (e.g., "gini" for classification, "mse" for regression). 
+ 
+ 
+CODE:  Implementation of Decision Tree Classifier on Iris Dataset 
+ 
+Step 1: Importing required libraries and splitting the dataset 
+ 
+ 
+ 
+Step 2: Training the model and checking its performance 
+ 
+ 
+ 
+ 
+Step 3: Decision tree of the trained model 
+ 
+ 
+32 | Page 
+ 
+ 
+ 
+ 
+RESULTS:  
+Decision Tree Classification: 
+• Performance can be quite good on datasets like the Iris or Titanic dataset. For example, on 
+the Iris dataset, Decision Trees can often achieve accuracies of around 90% or higher, 
+depending on the level of tree depth and the features selected. 
+• On Titanic dataset, accuracy could range from 75% to 85%, depending on data 
+preprocessing, feature engineering, and hyperparameter tuning. 
+ 
+Decision Tree Regression: 
+• In Regression tasks (e.g., predicting house prices), Decision Tree regression can provide 
+good results with a properly tuned model. However, it may not perform as well as more 
+advanced models like Random Forests or Gradient Boosting Machines. 
+• For instance, when applied to house price prediction, the model might yield R² values 
+between 0.7 and 0.9, with further improvements seen after hyperparameter optimization. 
+ 
+Both methods benefit from preprocessing like scaling and feature selection, and their performance 
+improves with careful tuning of hyperparameters to avoid overfitting. 
+ 
+CONCLUSION: 
+• Decision Trees are versatile and perform well for both classification and regression tasks. 
+• Overfitting can be an issue with decision trees, especially with deep trees. Hyperparameter 
+tuning (like limiting the tree depth and requiring more samples per leaf) can mitigate this. 
+• Visualizations of decision trees are easy to interpret and explain, making them a popular 
+choice for interpretable machine learning models. 
+Decision Trees are a great starting point for many machine learning tasks, but more complex 
+techniques like Random Forests or Gradient Boosting Machines can be explored for better 
+performance and generalization. 
