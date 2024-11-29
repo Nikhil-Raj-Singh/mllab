@@ -1,0 +1,41 @@
+Experiment No. 4
+ Experiment Title: Simulation and Display of Contrast stretching of a low contrast image,
+ Histogram, and Histogram Equalization.
+ AIM: To study the Contrast stretching of a low contrast image, Histogram, and Histogram
+ Equalization.
+ OBJECTIVE: To study the Image Processing concept.
+ TOOLSREQUIRED:MATLAB
+ THEORY:Contrast stretching (also called Normalization) attempts to improve an image by
+ stretching the Range of intensity value it contains to make Full use of possible values. This
+ this type of transformation is used to enhance low contrast images. In a low contrast image
+ specific details are difficult to determine due to the fact that most pixels are at the same intensity
+ value. Image Negatives technique is simply negates all of the values in image and
+ adds the value of the maximum (absolute) intensity to all pixels in the image. Contract
+ stretching is a common technique in that,,, the contrast of image is the distribution of its dark
+ and light pixels. n contract stretching, a low-contrast image exhibits small differences
+ between its light and dark pixel values.
+ Histogram equalization is defined as a process by which an image which has very low
+ contrast (signified by a grouping of mages histogram) can be modified bring out details not
+ previously visible. Histogram equalization transformation is used to produce an image with a
+ uniform probability density function of pixel intensities from an image with poor contrast.
+ Image Subtraction technique is basic subtraction the grey level intensities of one image from
+ another in a pixel-wise fashion. Histogram Equalization is,a common technique for
+ enhancing the appearance of images. While the histogram of a low-contrast image is narrow.
+ Hence, a better image could be obtained by stretching the histogram of an image so that the
+ full dynamic range of the image is filled.
+ Program Code:
+ %Image Enhancement
+ I=imread('cancercell.jpg');
+ subplot(4,2,1); imshow(I); title('Original Image');
+ g=rgb2gray(I);
+subplot(4,2,5); imshow(g); title('Gray Image');
+ J=imadjust(g,[0.3 0.7],[]);
+ subplot(4,2,3); imshow(J); title('Enhanced Image');
+ D=imadjust(I,[0.2 0.3 0; 0.6 0.7 1],[]);
+ subplot(4,2,4);imshow(D);title('Enhanced Image 2');
+ %Histogram and Histogram Equalization
+ subplot(4,2,7); imhist(g); title('Histogram of Gray Image');
+ m=histeq(g);
+ subplot(4,2,6); imshow(m); title('Equalized Image');
+ subplot(4,2,8); imhist(m); title('Histogram of Equalized Image');
+ Simulation Results
