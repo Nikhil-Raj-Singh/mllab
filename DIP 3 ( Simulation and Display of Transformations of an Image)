@@ -1,0 +1,58 @@
+EXPERIMENTNO.3
+ Experiment Title: Simulation and Display of Transformations of an Image.
+ AIM: To study the distinct transformations of an Image.
+ OBJECTIVE: To study the Image Processing concept.
+ TOOLSREQUIRED:MATLAB
+ THEORY:Resizing refers to the scaling of an image. When an image is resized, the pixel
+ information changes, and hence, reducing the size of an image requires resampling of the
+ pixels while increasing the size of an image requires reconstruction of the image.
+ Reconstruction means we need to interpolate new pixels. We can manually specify the
+ scaling size of an image, or we can use the scaling factor.
+ Scaling of an image in MATLAB can also be accomplished using different interpolation
+ methods. Image interpolation occurs on resizing or distorting the image from a one-pixel grid
+ to another.
+ Whydoweneed to resize images?
+ 1. Image resizing is necessary to increase or decrease the total number of pixels.
+ 2. Resizing the image is a critical pre-processing step in computer vision processes. Machine
+ learning models train substantially faster on smaller images.
+ 3. Resizing is essential to prevent the loss of information.
+ 4. Smaller images consume lesser size on network and GPU.
+ 5. It is often used to discard the unnecessary information.
+ Program Code:
+ %Scaling & Rotation
+ %Scaling (Resize)
+ I=imread('earcell.jpg');
+ subplot(2,2,1); subimage(I); title('Original Image');
+ s=input('Enter Scaling Factor');
+ j=imresize(I,s);
+ subplot(2,2,2); subimage(j); title('Scaled Image');
+ %Rotation
+ K=imrotate(j,60);
+subplot(2,2,3); imshow(K); title('Rotated Image 60deg');
+ R=imrotate(j,45);
+ subplot(2,2,4); imshow(R); title('Rotated Image 45deg');
+ %Display the color image and its Resized images by different methods
+ %Display the color image
+ I=imread('embryo.jpg');
+ figure,
+ subplot(2,2,1);
+ subimage(I);
+ title('Original Image');
+ %Display Resized image by Bilinear method
+ B=imresize(I,5);
+ subplot(2,2,2);
+ subimage(B);
+ title('Bilinear Image');
+ %Display Resized image by Nearest method
+ C=imresize(I,5,'nearest');
+ subplot(2,2,3);
+ subimage(C);
+ title('Nearest Image');
+ %Display Resized image by Bicubic method
+ D=imresize(I,5,'Bicubic');
+ subplot(2,2,4);
+ subimage(D);
+ title('Bicubic Image');
+ Experimental Results:
+Simulation Result:
+ Conclusion: We have studied the transformations of an Image
