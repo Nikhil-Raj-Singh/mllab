@@ -1,0 +1,78 @@
+EXPERIMENTNO.2
+ Experiment Title: Simulation and Display of Relationships between Pixels
+ AIM: To study the relationships between Pixels in an Image.
+ OBJECTIVE: To study the Image Processing concept.
+ TOOLSREQUIRED:MATLAB
+ THEORY:Digital images play an important role both in daily life applications as well as in
+ the areas of research technology. The digital image processing refers to the manipulation of
+ an image by means of processor. The different elements of an image processing system
+ include image acquisition, image storage, image processing and display.
+ An image is two dimensional function that represent a message of sum characteristics such as
+ brightness or color of the viewed scene in the first Matlab program. The program for determining
+ the relationship between pixels has been implemented.
+ Neighbors of a pixel
+ Apixel p at (x,y) has 4-horizontal/vertical neighbors at (x+1,y), (x-1,y), (x,y+1) and (x,y-1).
+ These are called the 4-neighbors of p : N4(p).
+ Apixel p at (x,y) has 4 diagonal neighbors at (x+1,y+1), (x+1,y-1), (x-1,y+1) and (x-1,y-1).
+ These are called the diagonal-neighbours of p : ND(p).
+ The 4-neighbours and the diagonal neighbours of p are called 8-neighbours of p : N8(p).
+ Adjacency between pixels
+ Let V be the set of intensity values used to define adjacency.
+ In a binary image, V ={1} if we are referring to adjacency of pixels with value 1. In a gray
+scale image, the idea is the same, but set V typically contains more elements.
+ For example, in the adjacency of pixels with a range of possible intensity values 0 to 255, set
+ Vcould be any subset of these 256 values.
+ Weconsider three types of adjacency:
+ a) 4-adjacency: Two pixels p and q with values from V are 4-adjacent if q is in the set N4(p).
+ b) 8-adjacency: Two pixels p and q with values from V are 8-adjacent if q is in the set
+ N8(p).
+c) m-adjacency(mixed adjacency): Two pixels p and q with values from V are m-adjacent if
+ 1. q is in N4(p), or
+ 2. 2) q is in ND(p) and the set N4(p)∩N4(q) has no pixels whose values are from V.
+ Connectivity between pixels
+ It is an important concept in digital image processing.
+ It is used for establishing boundaries of objects and components of regions in an image.
+ Two pixels are said to be connected:
+ • if they are adjacent in some sense(neighbour pixels,4/8/m-adjacency)
+ • if their gray levels satisfy a specified criterion of similarity(equal intensity level)
+ There are three types of connectivity on the basis of adjacency. They are:
+ a) 4-connectivity: Two or more pixels are said to be 4-connected if they are 4-adjacent with
+ each others.
+ b) 8-connectivity: Two or more pixels are said to be 8-connected if they are 8-adjacent with
+ each others.
+ c) m-connectivity: Two or more pixels are said to be m-connected if they are m-adjacent with
+ each others.
+ Program Code:
+ %Tofind Neighbour of a given Pixel
+ a=magic(5);
+ disp(‘a=’); disp(a);
+ b=input('Enter the row < size of the Matrix');
+ c=input(' Enter the Column < size of matrix');
+ disp(‘Element’); disp(a(b,c));
+ %4Point Neighbour
+ N4=[a(b+1,c), a(b-1,c), a(b,c+1), a(b,c-1)];
+ disp(‘N4=’); disp(N4);
+ %8Point Neighbour
+ N8=[a(b+1,c), a(b-1,c), a(b,c+1), a(b,c-1), a(b+1,c+1), a(b+1,c-1), a(b-1,c-1), a(b-1,c+1)];
+ disp(‘N8=’); disp(N8);
+ %Diagonal Neighbour
+ND=[a(b+1,c+1),a(b+1,c-1),a(b-1,c-1),a(b-1,c+1)];
+ disp(‘ND=’);disp(ND);
+ Output
+ a=
+ 17 24 1 8 15
+ 23 5 7 14 16
+ 4 6 13 20 22
+ 10 12 19 21 3
+ 11 18 25 2 9
+ Entertherow<sizeoftheMatrix3
+ EntertheColumn<sizeofmatrix3
+ Element=
+ 13
+ N4=
+ 197206
+ N8=
+ 1972062112514
+ ND=
+ 2112514
+ Conclusion:Wehavestudiedtherelationshipbetweenthepixelsinanimage.
