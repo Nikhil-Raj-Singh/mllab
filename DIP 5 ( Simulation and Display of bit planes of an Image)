@@ -1,0 +1,40 @@
+Experiment No. 5 
+EXPERIMENT TITLE: Simulation and Display of bit planes of an Image.  
+AIM: To study the bit planes of an Image.  
+OBJECTIVE: To study the Image Processing concept.  
+TOOLS REQUIRED: MATLAB 
+THEORY: Image is mainly grouping of pixels (dots) information. When we write that image is of 
+600 X 400 sizes, it means that image has 600 pixels in horizontal direction and 400 pixels in vertical 
+direction. So, altogether there are 600 X 400 pixels and each pixel contains some information about 
+image. Pixel of grayscale image has a value lies in between 0 – 255 (Total 256 or 28 Levels) which 
+decides at which position, if pixel value is 0, it means that pixel colour will be fully black and if pixel 
+value is 255, then that pixel will be fully white and pixel having intermediate value will be having 
+shades of black and white. Since pixel value of grayscale image lies between 0 -255, so its 
+information is contained using 8 bit So, we can divide those image into 8 planes (8 Binary Image). 
+Binary image are those images whose pixel value can be either 0 or 1. For an 8-bit image “0” is 
+encoded in 00000000 and “255” is encoded in 11111111. 
+PROGRAM CODE:  
+i = imread('exp.png'); % Read the image 
+i = rgb2gray(i); % Convert to grayscale if needed (only if the image is not grayscale) 
+b0 = double(bitget(i, 1));  
+b1 = double(bitget(i, 2));  
+b2 = double(bitget(i, 3));  
+b3 = double(bitget(i, 4));  
+b4 = double(bitget(i, 5));  
+b5 = double(bitget(i, 6));  
+b6 = double(bitget(i, 7));  
+b7 = double(bitget(i, 8));  
+subplot(3, 3, 1); imshow(i, []); title('Original Image'); 
+subplot(3, 3, 2); imshow(b0, []); title('BIT PLANE 0');  
+subplot(3, 3, 3); imshow(b1, []); title('BIT PLANE 1');  
+subplot(3, 3, 4); imshow(b2, []); title('BIT PLANE 2');  
+subplot(3, 3, 5); imshow(b3, []); title('BIT PLANE 3');  
+subplot(3, 3, 6); imshow(b4, []); title('BIT PLANE 4');  
+subplot(3, 3, 7); imshow(b5, []); title('BIT PLANE 5');  
+subplot(3, 3, 8); imshow(b6, []); title('BIT PLANE 6');  
+subplot(3, 3, 9); imshow(b7, []); title('BIT PLANE 7'); 
+SIMULATION RESULTS: 
+ 
+ 
+ 
+CONCLUSION: We have studied bit planes of an Image.
